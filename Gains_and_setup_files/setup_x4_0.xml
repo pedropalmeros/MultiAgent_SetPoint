@@ -328,15 +328,15 @@
             <DoubleSpinBox name="alpha_2 (Bsktp): " value="0.9"/>
             <DoubleSpinBox name="factor  (Bkstp): " value="1.0"/>
             <DoubleSpinBox name="sat_u:" value="0.3"/>
-          <DoubleSpinBox name="Sat_Consensus: " value="0.50"/><DoubleSpinBox name="Gain: " value="0.1"/><DoubleSpinBox name="GainF (Bsktp): " value="0.10"/><DoubleSpinBox name="GainL (Bsktp): " value="0.80"/></GroupBox>
+          <DoubleSpinBox name="Sat_Consensus: " value="0.50"/><DoubleSpinBox name="Gain: " value="0.1"/><DoubleSpinBox name="GainF (Bsktp): " value="0.1"/><DoubleSpinBox name="GainL (Bsktp): " value="0.8"/></GroupBox>
           <GroupBox name="y_Formation">
             <DoubleSpinBox name="period, 0 for auto" value="0"/>
             <DoubleSpinBox name="FG_01: " value="0.7"/>
             <DoubleSpinBox name="alpha_1 (Bkstp): " value="0.1"/>
-            <DoubleSpinBox name="alpha_2 (Bsktp): " value="0.90"/>
+            <DoubleSpinBox name="alpha_2 (Bsktp): " value="0.9"/>
             <DoubleSpinBox name="factor  (Bkstp): " value="-0.5"/>
-            <DoubleSpinBox name="sat_u:" value="0.30"/>
-          <DoubleSpinBox name="Sat_Consensus: " value="1"/><DoubleSpinBox name="Gain: " value="0.10"/><DoubleSpinBox name="GainF (Bsktp): " value="0.10"/><DoubleSpinBox name="GainL (Bsktp): " value="0.80"/></GroupBox>
+            <DoubleSpinBox name="sat_u:" value="0.3"/>
+          <DoubleSpinBox name="Sat_Consensus: " value="1"/><DoubleSpinBox name="Gain: " value="0.1"/><DoubleSpinBox name="GainF (Bsktp): " value="0.1"/><DoubleSpinBox name="GainL (Bsktp): " value="0.8"/></GroupBox>
           <GroupBox name="Rel Dist x F1">
             <DoubleSpinBox name="F1x[0][0]:" value="0"/>
             <DoubleSpinBox name="F1x[0][1]:" value="-1.5"/>
@@ -389,7 +389,7 @@
             <PushButton name="Formation 02" value="1"/>
             <PushButton name="Emergency Land"/>
           </GroupBox>
-        <GroupBox name="Transition"><PushButton name="Home" value="1"/><PushButton name="Flight Formation" value="1"/><PushButton name="Hold_Pos / Formation" value="1"/></GroupBox><GroupBox name="Ref_Fleet"><DoubleSpinBox name="Fleet Position(x)" value="-2.0"/><DoubleSpinBox name="Fleet Position(y)" value="0"/></GroupBox></Tab>
+        <GroupBox name="Transition"><PushButton name="Home" value="1"/><PushButton name="Flight Formation" value="1"/><PushButton name="Hold_Pos / Formation" value="1"/></GroupBox><GroupBox name="Ref_Fleet"><DoubleSpinBox name="Fleet Position(x)" value="0.0"/><DoubleSpinBox name="Fleet Position(y)" value="0"/></GroupBox></Tab>
         <Tab name="Graphs 01 pf">
           <DataPlot1D name="x_Formation" period="100" enabled="1"/>
           <DataPlot1D name="y_Formation" period="100" enabled="0"/>

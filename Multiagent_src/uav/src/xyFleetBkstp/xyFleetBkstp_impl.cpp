@@ -115,12 +115,6 @@ void xyFleetBkstp_impl::UpdateFrom(const io_data *data) {
   RelDist[2] = input->ValueNoMutex(6,0);
   RelDist[3] = input->ValueNoMutex(4,0);
 
-
-  //cout << "s0: " << States[0] << "s1: " << States[1] << "s2: " << States[2] << "sL: " << States[3] << endl; 
-  //cout << "d0: " << RelDist[0] << "d1: " << RelDist[1] << "d2: " << RelDist[2] << "dL: " << RelDist[3] << endl; 
- 
-
-
   float vel = input->ValueNoMutex(7,0);
   float ref_vel = input->ValueNoMutex(8,0);
 
@@ -138,7 +132,6 @@ void xyFleetBkstp_impl::UpdateFrom(const io_data *data) {
 
   float u_total = u;
 
-  //cout << "u_tot: " << u_total;
   OwnSat(u_total,sat_u->Value() );
 
   u_total = _gain->Value()*u_total;
@@ -152,8 +145,6 @@ void xyFleetBkstp_impl::UpdateFrom(const io_data *data) {
   state->SetValueNoMutex(3, 0, e1);
   state->SetValueNoMutex(4, 0, u_total);
   state->ReleaseMutex();
-
-  //cout << "RelaseMutex ok " << endl; 
 
   self->output->SetValue(0, 0, u_total);
   self->output->SetDataTime(data->DataTime());

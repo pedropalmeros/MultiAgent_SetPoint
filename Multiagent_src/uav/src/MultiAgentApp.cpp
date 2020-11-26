@@ -625,20 +625,11 @@ void MultiAgentApp::SetHoldPosition(){
 
     uavVrpn->GetPosition(Pos2Hold);
 
-    //std::cout << "Pos2Hold    x: " << Pos2Hold.x << "  y: "   << Pos2Hold.y << "  z: " << Pos2Hold.z << endl; 
-
-
     }
 
 
 void MultiAgentApp::ComputePositionControllers(flair::core::Vector3Df &Controller){
-    if(behaviourMode==BehaviourMode_t::Homing){
-        cout << "Homing\t";
-    }
-    if(behaviourMode==BehaviourMode_t::Formation){
-        cout << "Formation\t";
-    }
-    cout << "Form_Index: " << Form_index << endl;
+
     float ux, uy, uz;
 
     Vector3Df uav_pos,uav_vel;
@@ -676,7 +667,6 @@ void MultiAgentApp::ComputePositionControllers(flair::core::Vector3Df &Controlle
         ux = xCtrl->Output();
         uy = yCtrl->Output();
 
-        //std::cout << "Position Control Single" << std::endl;
 
     }
 
@@ -689,12 +679,9 @@ void MultiAgentApp::ComputePositionControllers(flair::core::Vector3Df &Controlle
         yCtrl->Update(GetTime());
 
         ux = xCtrl->Output();
-        uy = 0.0;
+        uy = yCtrl->Output();
 
-        //
-        //ux = 0.0;
-        //uy = yCtrl->Output();
-
+        
     }
 
 
@@ -727,9 +714,6 @@ void MultiAgentApp::ComputePositionControllers(flair::core::Vector3Df &Controlle
 
 
         ux = XMultiagentCtrl;
-        //uy = 0.0;
-        
-        //ux = 0.0;
         uy = YMultiagentCtrl;
 
 
@@ -790,8 +774,6 @@ void MultiAgentApp::FleetPos(std::vector<float> &fleet_x, std::vector<float> &fl
 }
 
 void MultiAgentApp::ExtractRelativeDistances(int idDrone, std::vector<float> &reldistx, std::vector<float> &reldisty){
-    //cout << "Ext_Dist| Form: " <<  Form_index << "  | idDrone: " << idDrone << "||||   ";
-
     
    if (Form_index == 1){
     for(int i = 0; i < 3; i++){
@@ -815,10 +797,7 @@ void MultiAgentApp::ExtractRelativeDistances(int idDrone, std::vector<float> &re
             reldisty[i] = 0.0;
         }
     }
-
-    //cout <<    "d0x: " << reldistx[0] << "   d1x: " << reldistx[1] << "   d2x: " << reldistx[2] << "   dLx: " << reldistx[3];
-    //cout << "   d0y: " << reldisty[0] << "   d1y: " << reldisty[1] << "   d2y: " << reldisty[2] << "   dLx: " << reldisty[3] << endl;
-    
+   
 }
 
 
